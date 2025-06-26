@@ -8,19 +8,20 @@ body {
 .auth-container {
   padding: 20px;
   display: flex;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 .welcome-text{
   font-size: 40px;
- 
+   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   color: #fff;
   line-height: 36px;
 }
 .status-text{
-  
+   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 16px;
   color:#dbeafe;
 }
@@ -91,6 +92,8 @@ body {
   padding: 8px 16px;
   color: #6b7280;
   cursor: pointer;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+
   width:50%;
 }
 
@@ -117,6 +120,8 @@ body {
   color:#036;
   font-size: 16px;
   font-weight: 500;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+
 
 }
 input[type='text'],
@@ -187,6 +192,7 @@ input[type='password'] {
   cursor: pointer;
   color: #036;
   font-weight: 500;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   border-radius: 6px;
   font-size: 14px;
 }
