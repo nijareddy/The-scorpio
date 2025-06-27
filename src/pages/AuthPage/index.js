@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './index.css';
-import Logo from '../../constants/logo'
+import SCORPIO_LOGO from '../../constants/logo';
 
 const AuthPage = () => {
   const [isRegistering, setIsRegistering] = useState(true);
@@ -8,9 +8,12 @@ const AuthPage = () => {
   return (
     <div className="auth-container">
       <div className="auth-box">
-       
+
         <div className="auth-left">
-           <Logo/>
+          <div className="logo-login-section">
+            <img src={SCORPIO_LOGO} alt="The Scorpio" className="logo" />
+            <span className="brand-name-login">The Scorpio</span>
+          </div>
           <h3 className='welcome-text'>{isRegistering ? 'Join The Scorpio' : 'Welcome Back!'}</h3>
           <p className='status-text'>
             {isRegistering
@@ -43,16 +46,16 @@ const AuthPage = () => {
           {isRegistering ? (
             <form className="auth-form">
               <div className="form-group">
-                 <label className='label-text'> First Name</label>
+                <label className='label-text'> First Name</label>
                 <input type="text" placeholder="First Name" required />
-                 <label className='label-text'>Last Name</label>
+                <label className='label-text'>Last Name</label>
                 <input type="text" placeholder="Last Name" required />
               </div>
-               <label className='label-text'>Email Address</label>
+              <label className='label-text'>Email Address</label>
               <input type="email" placeholder="Email Address" required />
-               <label className='label-text'>Phone Number</label>
+              <label className='label-text'>Phone Number</label>
               <input type="tel" placeholder="Phone Number" required />
-               <label className='label-text'>Password</label>
+              <label className='label-text'>Password</label>
               <input type="password" placeholder="Password" required />
 
               <button type="submit" className="primary-btn">Create Account</button>
@@ -61,10 +64,10 @@ const AuthPage = () => {
             <form className="auth-form">
               <label className='label-text'>Email Address</label>
               <input type="email" placeholder="Email Address" required />
-               <label className='label-text'>Password</label>
+              <label className='label-text'>Password</label>
               <input type="password" placeholder="Password" required />
               <div className="form-options">
-                <label><input type="checkbox"/>Remember me</label>
+                <label><input type="checkbox" />Remember me</label>
                 <a href="#">Forgot password?</a>
               </div>
               <button type="submit" className="primary-btn">Sign In</button>
