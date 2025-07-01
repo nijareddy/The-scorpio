@@ -1,0 +1,89 @@
+/* Trending Section */
+.trending-section {
+  padding: 30px 2%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trending-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+
+/* Grid Layout for Product Cards */
+.trending-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-section {
+  padding: 30px 0;
+  position: relative;
+}
+
+.section-title {
+text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+.product-slider-wrapper {
+  position: relative;
+}
+
+.product-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.product-slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.scroll-btn.left {
+  left: -10px; 
+}
+
+.scroll-btn.right {
+  right: -10px;
+}
+
+.scroll-btn:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .scroll-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
