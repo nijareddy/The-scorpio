@@ -30,6 +30,7 @@ const carouselData = [
     subText: 'Timeless pieces, impeccable quality'
   }
 ];
+
 const trendingProducts = [
   {
     image: '/images/product1.jpg',
@@ -37,7 +38,8 @@ const trendingProducts = [
     price: '₹1,800',
     originalPrice: '₹2,300',
     offer: '22% OFF',
-    isNew: false
+    isNew: false,
+    inStock:true
 
   },
   {
@@ -46,21 +48,24 @@ const trendingProducts = [
     price: '₹1,200',
     originalPrice: '₹1,500',
     offer: '20% OFF',
-    isNew: false
+    isNew: false,
+    inStock:true
   }, {
     image: '/images/product2.jpg',
     title: 'Classic Formal Shirt - White',
     price: '₹1,200',
     originalPrice: '₹1,500',
     offer: '20% OFF',
-    isNew: false
+    isNew: false,
+    inStock:true
   }, {
     image: '/images/product2.jpg',
     title: 'Classic Formal Shirt - White',
     price: '₹1,200',
     originalPrice: '₹1,500',
     offer: '20% OFF',
-    isNew: false
+    isNew: false,
+    inStock:true
   },
   {
     image: '/images/product1.jpg',
@@ -68,7 +73,8 @@ const trendingProducts = [
     price: '₹2,200',
     originalPrice: '₹2,800',
     offer: '21% OFF',
-    isNew: false
+    isNew: false,
+    inStock:true
   },
   {
     image: '/images/product2.jpg',
@@ -76,9 +82,11 @@ const trendingProducts = [
     price: '₹1,500',
     originalPrice: '₹1,900',
     offer: '21% OFF',
-    isNew: false
+    isNew: false,
+    inStock:true
   }
 ];
+
 const newCollectionItems = [
   {
     image: '/images/product2.jpg',
@@ -87,6 +95,7 @@ const newCollectionItems = [
     originalPrice: '₹3,200',
     discount: '12%',
     isNew: true,
+    inStock:true
   },
   {
     image: '/images/product2.jpg',
@@ -95,6 +104,7 @@ const newCollectionItems = [
     originalPrice: '₹2,800',
     discount: '14%',
     isNew: true,
+    inStock:true
   },
   {
     image: '/images/product2.jpg',
@@ -103,6 +113,7 @@ const newCollectionItems = [
     originalPrice: '₹1,600',
     discount: '16%',
     isNew: true,
+    inStock:true
   },
   {
     image: '/images/product2.jpg',
@@ -111,8 +122,10 @@ const newCollectionItems = [
     originalPrice: '₹2,500',
     discount: '15%',
     isNew: true,
+    inStock:true
   },
 ];
+
 const HomePage = () => {
   return (
     <div className='home-container'>

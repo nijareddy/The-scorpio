@@ -26,7 +26,7 @@
 }
 
 .section-title {
-text-align: center;
+ text-align: center;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 30px;
@@ -49,6 +49,7 @@ text-align: center;
 .product-slider::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
+
 
 .scroll-btn {
   position: absolute;

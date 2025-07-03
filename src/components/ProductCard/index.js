@@ -1,4 +1,4 @@
-// src/components/ProductCard.js
+
 import React from 'react';
 import './index.css';
 import { FiShoppingCart, FiHeart } from 'react-icons/fi';
@@ -9,10 +9,10 @@ const ProductCard = ({
   price,
   originalPrice,
   discount,
-  isNew
+  isNew,inStock
 }) => {  
   return (  
-    <div className="product-card">
+    <div className={`product-card ${inStock ?  '' : 'out-of-stock' }`}>
       {isNew && <div className="product-badge">NEW</div>}
       <div className="wishlist-icon">
         <FiHeart />
@@ -30,9 +30,7 @@ const ProductCard = ({
         </div>
 
         <button
-          className="add-to-cart-btn"
-          
-        >
+          className="add-to-cart-btn">
           <FiShoppingCart style={{marginRight:"4px",fontSize:"14px"}}/> Add to Cart
         </button>
       </div>

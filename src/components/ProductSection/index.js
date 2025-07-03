@@ -4,6 +4,8 @@ import ProductCard from '../../components/ProductCard';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './index.css';
 
+
+
 const ProductSection = ({ titleComponent, products }) => {
   const scrollRef = useRef(null);
 
@@ -19,10 +21,11 @@ const ProductSection = ({ titleComponent, products }) => {
     <section className="product-section">
       <h2 className="section-title">{titleComponent}</h2>
       <div className="product-slider-wrapper">
+
         <button className="scroll-btn left" onClick={scrollLeft}>
           <FaChevronLeft />
         </button>
-
+ 
         <div className="product-slider" ref={scrollRef}>
           {products.map((item, index) => (
             <ProductCard key={index} {...item} />
