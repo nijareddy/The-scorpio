@@ -2,22 +2,22 @@
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
-  width: 25%;
-  min-width: 340px;
+  width: 30%;
+  min-width: 300px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   transition: box-shadow 0.3s ease;
   background-color: white;
   position: relative;
-
- 
 }
-.out-of-stock {
-  opacity: 0.6;
+.product-image-container {
   position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
 }
-
 
 .notify-btn {
   margin-top: 5px;
@@ -141,4 +141,53 @@
 .out-of-stock {
   opacity: 0.6;
   position: relative;
+}
+.out-of-stock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.out-of-stock-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Optional: Make Add to Cart button dimmed when disabled */
+.add-to-cart-btn:disabled {
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 6px 8px;
+  z-index: 2;
+  display: block;
+  cursor: pointer;
+}
+
+.wishlist-icon-outline {
+  color: gray;
+  font-size: 16px;
+}
+
+.wishlist-icon-filled {
+  color: red;
+  font-size: 16px;
 }

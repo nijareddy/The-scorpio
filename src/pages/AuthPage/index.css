@@ -48,14 +48,42 @@ body {
   box-sizing: border-box;
 }
 
-.auth-left {
-  background-color: #04395e;
-  color: white;
+/* .auth-left {
+background-color: #04395e;
   display: flex;
   flex-direction: column;
   justify-content: center;
  
+} */
+ .auth-left {
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+background-image: url('https://res.cloudinary.com/dd0omxxgr/image/upload/v1751643018/carousel2_zxzcma.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
+
+.auth-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(4, 57, 94, 0.85), rgba(4, 57, 94, 0.8));
+  z-index: 0;
+}
+
+.auth-left > * {
+  position: relative;
+  z-index: 1;
+}
+ 
+
 
 .auth-left .brand {
   font-size: 24px;

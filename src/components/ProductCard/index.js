@@ -2,6 +2,7 @@
 import React from 'react';
 import './index.css';
 import { FiShoppingCart, FiHeart } from 'react-icons/fi';
+import { FaHeart } from "react-icons/fa";
 
 const ProductCard = ({
   image,
@@ -9,16 +10,40 @@ const ProductCard = ({
   price,
   originalPrice,
   discount,
-  isNew,inStock
-}) => {  
-  return (  
-    <div className={`product-card ${inStock ?  '' : 'out-of-stock' }`}>
+  isNew,
+  inStock,
+  handleRemoveFromWishlist
+}) => {
+  const isWishlisted = typeof handleRemoveFromWishlist === 'function';
+
+  return (
+    <div className={`product-card ${inStock ? '' : 'out-of-stock'}`}>
       {isNew && <div className="product-badge">NEW</div>}
-      <div className="wishlist-icon">
-        <FiHeart />
+
+      
+      <div
+        className="wishlist-icon"
+        onClick={() => {
+          if (isWishlisted) {
+            handleRemoveFromWishlist(title);
+          }
+        }}
+      >
+        {isWishlisted ? (
+          <FaHeart className="wishlist-icon-filled" />
+        ) : (
+          <FiHeart className="wishlist-icon-outline" />
+        )}
       </div>
 
-      <img src={image} alt={title} className="product-image" />
+      <div className="product-image-container">
+        <img src={image} alt={title} className="product-image" />
+        {!inStock && (
+          <div className="out-of-stock-overlay">
+            <div className="out-of-stock-text">Out of Stock</div>
+          </div>
+        )}
+      </div>
 
       <div className="product-details">
         <h4 className="product-title">{title}</h4>
@@ -30,8 +55,12 @@ const ProductCard = ({
         </div>
 
         <button
-          className="add-to-cart-btn">
-          <FiShoppingCart style={{marginRight:"4px",fontSize:"14px"}}/> Add to Cart
+          className="add-to-cart-btn"
+          disabled={!inStock}
+          style={{ cursor: inStock ? 'pointer' : 'not-allowed' }}
+        >
+          <FiShoppingCart style={{ marginRight: '4px', fontSize: '14px' }} />
+          Add to Cart
         </button>
       </div>
     </div>

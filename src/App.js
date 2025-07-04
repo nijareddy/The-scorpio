@@ -4,6 +4,7 @@ import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 import WishlistPage from './pages/WishlistPage';
 import CartPage from './pages/CartPage';
+import ProductDetailsPage from './pages/ProductDetailsPage'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/" element={<HomePage/>}/>
          <Route exact path="/wish-list" element={<WishlistPage/>}/>
          <Route exact path ="/cart" element={<CartPage/>}/>
+         <Route exact path ="/product-details" element={<ProductDetailsPage/>}/>
       </Routes>
     </Router>
   );
