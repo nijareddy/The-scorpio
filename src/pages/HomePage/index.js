@@ -31,102 +31,202 @@ const carouselData = [
   }
 ];
 
-const trendingProducts = [
-  {
-    image: '/images/product1.jpg',
-    title: 'Executive Blazer - Navy Blue',
-    price: '₹1,800',
-    originalPrice: '₹2,300',
-    offer: '22% OFF',
-    isNew: false,
-    inStock:true
+// const trendingProducts = [
+//   {
+//     image: '/images/product1.jpg',
+//     title: 'Executive Blazer - Navy Blue',
+//     price: '₹1,800',
+//     originalPrice: '₹2,300',
+//     offer: '22% OFF',
+//     isNew: false,
+//     inStock:true
 
-  },
+//   },
+//   {
+//     image: '/images/product2.jpg',
+//     title: 'Classic Formal Shirt - White',
+//     price: '₹1,200',
+//     originalPrice: '₹1,500',
+//     offer: '20% OFF',
+//     isNew: false,
+//     inStock:true
+//   }, {
+//     image: '/images/product2.jpg',
+//     title: 'Classic Formal Shirt - White',
+//     price: '₹1,200',
+//     originalPrice: '₹1,500',
+//     offer: '20% OFF',
+//     isNew: false,
+//     inStock:true
+//   }, {
+//     image: '/images/product2.jpg',
+//     title: 'Classic Formal Shirt - White',
+//     price: '₹1,200',
+//     originalPrice: '₹1,500',
+//     offer: '20% OFF',
+//     isNew: false,
+//     inStock:true
+//   },
+//   {
+//     image: '/images/product1.jpg',
+//     title: "Women's Power Suit - Black",
+//     price: '₹2,200',
+//     originalPrice: '₹2,800',
+//     offer: '21% OFF',
+//     isNew: false,
+//     inStock:true
+//   },
+//   {
+//     image: '/images/product2.jpg',
+//     title: 'Designer Trousers - Slim Fit',
+//     price: '₹1,500',
+//     originalPrice: '₹1,900',
+//     offer: '21% OFF',
+//     isNew: false,
+//     inStock:true
+//   }
+// ];
+
+// const newCollectionItems = [
+//   {
+//     image: '/images/product2.jpg',
+//     title: 'Modern Suit Collection - 2024',
+//     price: '₹2,800',
+//     originalPrice: '₹3,200',
+//     discount: '12%',
+//     isNew: true,
+//     inStock:true
+//   },
+//   {
+//     image: '/images/product2.jpg',
+//     title: 'Elegant Evening Wear',
+//     price: '₹2,400',
+//     originalPrice: '₹2,800',
+//     discount: '14%',
+//     isNew: true,
+//     inStock:true
+//   },
+//   {
+//     image: '/images/product2.jpg',
+//     title: 'Contemporary Formal Shirt',
+//     price: '₹1,350',
+//     originalPrice: '₹1,600',
+//     discount: '16%',
+//     isNew: true,
+//     inStock:true
+//   },
+//   {
+//     image: '/images/product2.jpg',
+//     title: 'Professional Blazer Set',
+//     price: '₹2,100',
+//     originalPrice: '₹2,500',
+//     discount: '15%',
+//     isNew: true,
+//     inStock:true
+//   },
+// ];
+
+const initialWishlist = [
   {
-    image: '/images/product2.jpg',
-    title: 'Classic Formal Shirt - White',
-    price: '₹1,200',
-    originalPrice: '₹1,500',
-    offer: '20% OFF',
-    isNew: false,
-    inStock:true
-  }, {
-    image: '/images/product2.jpg',
-    title: 'Classic Formal Shirt - White',
-    price: '₹1,200',
-    originalPrice: '₹1,500',
-    offer: '20% OFF',
-    isNew: false,
-    inStock:true
-  }, {
-    image: '/images/product2.jpg',
-    title: 'Classic Formal Shirt - White',
-    price: '₹1,200',
-    originalPrice: '₹1,500',
-    offer: '20% OFF',
-    isNew: false,
-    inStock:true
+    image: '/images/product1.jpg',
+    title: 'Elegant Blazer - Charcoal Gray',
+    price: '₹2,499',
+    originalPrice: '₹3,299',
+    offer: '24% OFF',
+    isNew: true,
+    inStock: true,
+    isWishlisted: true,
+    handleAddToWishlist: () => console.log('Added Elegant Blazer'),
+    handleRemoveFromWishlist: () => console.log('Removed Elegant Blazer'),
   },
   {
     image: '/images/product1.jpg',
-    title: "Women's Power Suit - Black",
-    price: '₹2,200',
-    originalPrice: '₹2,800',
-    offer: '21% OFF',
+    title: 'Slim Fit Formal Shirt - Sky Blue',
+    price: '₹1,199',
+    originalPrice: '₹1,599',
+    offer: '25% OFF',
     isNew: false,
-    inStock:true
+    inStock: true,
+    isWishlisted: true,
+    handleAddToWishlist: () => console.log('Added Slim Fit Formal Shirt'),
+    handleRemoveFromWishlist: () => console.log('Removed Slim Fit Formal Shirt'),
+  },
+  {
+    image: '/images/product1.jpg',
+    title: "Women's Power Suit - Crimson Red",
+    price: '₹2,999',
+    originalPrice: '₹3,999',
+    offer: '25% OFF',
+    isNew: true,
+    inStock: true,
+    isWishlisted: false,
+    handleAddToWishlist: () => console.log("Added Women's Power Suit"),
+    handleRemoveFromWishlist: () => console.log("Removed Women's Power Suit"),
   },
   {
     image: '/images/product2.jpg',
-    title: 'Designer Trousers - Slim Fit',
-    price: '₹1,500',
-    originalPrice: '₹1,900',
+    title: 'Stretch Fit Trousers - Black',
+    price: '₹1,499',
+    originalPrice: '₹1,899',
     offer: '21% OFF',
     isNew: false,
-    inStock:true
+    inStock: true,
+    isWishlisted: true,
+    handleAddToWishlist: () => console.log('Added Stretch Fit Trousers'),
+    handleRemoveFromWishlist: () => console.log('Removed Stretch Fit Trousers'),
+  },
+  {
+    image: '/images/product2.jpg',
+    title: 'Chic Jumpsuit - Olive Green',
+    price: '₹1,899',
+    originalPrice: '₹2,499',
+    offer: '24% OFF',
+    isNew: true,
+    inStock: true,
+    isWishlisted: false,
+    handleAddToWishlist: () => console.log('Added Chic Jumpsuit'),
+    handleRemoveFromWishlist: () => console.log('Removed Chic Jumpsuit'),
+  }, {
+    image: '/images/product1.jpg',
+    title: 'Slim Fit Formal Shirt - Sky Blue',
+    price: '₹1,199',
+    originalPrice: '₹1,599',
+    offer: '25% OFF',
+    isNew: false,
+    inStock: true,
+    isWishlisted: false,
+    handleAddToWishlist: () => console.log('Added Slim Fit Formal Shirt'),
+    handleRemoveFromWishlist: () => console.log('Removed Slim Fit Formal Shirt'),
+  }, {
+    image: '/images/product1.jpg',
+    title: 'Slim Fit Formal Shirt - Sky Blue',
+    price: '₹1,199',
+    originalPrice: '₹1,599',
+    offer: '25% OFF',
+    isNew: false,
+    inStock: true,
+    isWishlisted: false,
+    handleAddToWishlist: () => console.log('Added Slim Fit Formal Shirt'),
+    handleRemoveFromWishlist: () => console.log('Removed Slim Fit Formal Shirt'),
+  },{
+    image: '/images/product1.jpg',
+    title: 'Slim Fit Formal Shirt - Sky Blue',
+    price: '₹1,199',
+    originalPrice: '₹1,599',
+    offer: '25% OFF',
+    isNew: false,
+    inStock: true,
+    isWishlisted: false,
+    handleAddToWishlist: () => console.log('Added Slim Fit Formal Shirt'),
+    handleRemoveFromWishlist: () => console.log('Removed Slim Fit Formal Shirt'),
   }
 ];
 
-const newCollectionItems = [
-  {
-    image: '/images/product2.jpg',
-    title: 'Modern Suit Collection - 2024',
-    price: '₹2,800',
-    originalPrice: '₹3,200',
-    discount: '12%',
-    isNew: true,
-    inStock:true
-  },
-  {
-    image: '/images/product2.jpg',
-    title: 'Elegant Evening Wear',
-    price: '₹2,400',
-    originalPrice: '₹2,800',
-    discount: '14%',
-    isNew: true,
-    inStock:true
-  },
-  {
-    image: '/images/product2.jpg',
-    title: 'Contemporary Formal Shirt',
-    price: '₹1,350',
-    originalPrice: '₹1,600',
-    discount: '16%',
-    isNew: true,
-    inStock:true
-  },
-  {
-    image: '/images/product2.jpg',
-    title: 'Professional Blazer Set',
-    price: '₹2,100',
-    originalPrice: '₹2,500',
-    discount: '15%',
-    isNew: true,
-    inStock:true
-  },
-];
 
 const HomePage = () => {
+   const trendingProducts = initialWishlist.filter(product => !product.isNew);
+  const newCollection = initialWishlist.filter(product => product.isNew);
+
   return (
     <div className='home-container'>
       <NavBar />
@@ -143,7 +243,7 @@ const HomePage = () => {
 
         <ProductSection
           titleComponent={<>New Collection 2024</>}
-          products={newCollectionItems}
+          products={newCollection}
         />
 
         <ProductSection

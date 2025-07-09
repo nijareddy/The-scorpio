@@ -1,34 +1,33 @@
-
 import React from 'react';
 import './index.css';
 import { FiShoppingCart, FiHeart } from 'react-icons/fi';
-import { FaHeart } from "react-icons/fa";
+import { FaHeart } from 'react-icons/fa';
 
 const ProductCard = ({
   image,
   title,
   price,
   originalPrice,
-  discount,
+  offer,
   isNew,
   inStock,
-  handleRemoveFromWishlist
+  isWishlisted,
+  handleAddToWishlist,
+  handleRemoveFromWishlist,
 }) => {
-  const isWishlisted = typeof handleRemoveFromWishlist === 'function';
+  const handleWishlistToggle = () => {
+    if (isWishlisted && typeof handleRemoveFromWishlist === 'function') {
+      handleRemoveFromWishlist(title);
+    } else if (!isWishlisted && typeof handleAddToWishlist === 'function') {
+      handleAddToWishlist(title);
+    }
+  };
 
   return (
     <div className={`product-card ${inStock ? '' : 'out-of-stock'}`}>
       {isNew && <div className="product-badge">NEW</div>}
 
-      
-      <div
-        className="wishlist-icon"
-        onClick={() => {
-          if (isWishlisted) {
-            handleRemoveFromWishlist(title);
-          }
-        }}
-      >
+      <div className="wishlist-icon" onClick={handleWishlistToggle}>
         {isWishlisted ? (
           <FaHeart className="wishlist-icon-filled" />
         ) : (
@@ -51,7 +50,7 @@ const ProductCard = ({
         <div className="price-section">
           <span className="current-price">{price}</span>
           <span className="original-price">{originalPrice}</span>
-          <span className="discount">{discount} OFF</span>
+          <span className="discount">{offer}</span>
         </div>
 
         <button
