@@ -82,6 +82,7 @@ const WishlistPage = () => {
   return (
     <div> 
       <Navbar />
+      <div style={{ margin: "50px",height:"100%" }}>
       <ProductSection
         titleComponent={
           <span
@@ -105,6 +106,7 @@ const WishlistPage = () => {
         titleComponent="Out of Stock"
         products={outOfStockProducts}
       />
+    </div>
     </div>
   );
 };

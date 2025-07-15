@@ -12,8 +12,6 @@
   margin-bottom: 30px;
 }
 
-
-
 /* Grid Layout for Product Cards */
 .trending-grid {
   display: flex;
@@ -32,10 +30,10 @@
   margin-bottom: 30px;
   color:#013a63;
 }
-
-
-.product-slider-wrapper {
-  position: relative;
+@media(max-width: 768px){
+  .section-title{
+    font-size: 1.5rem;
+  }
 }
 
 .product-slider {
@@ -43,14 +41,26 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 20px;
-  padding: 10px;
-  scrollbar-width: none; /* Firefox */
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;  /* snap feature */
 }
 
 .product-slider::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none;
 }
 
+.product-card {
+  scroll-snap-align: start; /* snap to each card */
+  flex: 0 0 auto;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+
+.product-slider-wrapper {
+  position: relative;
+}
 
 .scroll-btn {
   position: absolute;

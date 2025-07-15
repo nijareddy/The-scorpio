@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../../components/NavBar'
-import ProductItemDetails from '../../components/ProductDetailsItem'
+import ProductItemDetails from '../../components/ProductItemDetails'
 import SimilarProductItem from '../../components/SimilarProductItem'
 
 const products = [
@@ -30,6 +30,7 @@ const ProductDetailsPage = () => {
   return (
     <div>
         <NavBar/>
+        
         <ProductItemDetails/>
         <SimilarProductItem products={products}/>
     </div>

@@ -7,14 +7,15 @@ import './index.css';
 const ProductSection = ({ titleComponent, products, fromWishlist = false, handleRemove }) => {
   const scrollRef = useRef(null);
 
-  const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -360, behavior: 'smooth' });
-  };
+ const scrollLeft = () => {
+  const cardWidth = scrollRef.current.querySelector('.product-card')?.offsetWidth || 320; // fallback
+  scrollRef.current.scrollBy({ left: -cardWidth - 20, behavior: 'smooth' }); // 20 = gap
+};
 
-  const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: 360, behavior: 'smooth' });
-  };
-
+const scrollRight = () => {
+  const cardWidth = scrollRef.current.querySelector('.product-card')?.offsetWidth || 320;
+  scrollRef.current.scrollBy({ left: cardWidth + 20, behavior: 'smooth' });
+};
   return (
     <section className="product-section">
       <h2 className="section-title">{titleComponent}</h2>

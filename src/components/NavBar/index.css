@@ -1,4 +1,4 @@
-/* Navbar Top */
+/* === Top Offer Bar === */
 .navbar-top {
   background-color: #04395e;
   color: white;
@@ -13,38 +13,53 @@
   font-weight: 500;
 }
 
-/* Navbar Main */
+/* === Main Navbar === */
 .navbar-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 12px 20px; */
-  flex-wrap: wrap;
   background-color: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
-.menu-links,
-.nav-right {
+/* === Left Side: Menu & Categories === */
+.nav-left {
   display: flex;
-  gap: 30px;
-  align-items: center;
-  margin: 0px;
-  padding: 24px 40px;
+  gap: 20px;
+  padding-left: 40px;
+}
+
+.menu-links {
+  display: inline-block;
+  margin: 0;
+  padding: 24px 0;
 }
 
 .menu-links li {
   list-style: none;
-  
 }
 
-.menu-links li a,
-.nav-right a {
+.menu-links li a {
   text-decoration: none;
-  color: #306;
+  color: #04395e;
   font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
 }
 
+.menu-links li a:hover {
+  border-bottom: 3px solid #306;
+}
+
+.menu-links li .active-tab {
+  color: #c40000;
+
+}
+
+/* === Center: Logo === */
 .logo-center {
   display: flex;
   align-items: center;
@@ -59,14 +74,26 @@
 
 .brand-name {
   font-size: 24px;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, sans-serif;
   font-weight: 700;
   color: #04395e;
 }
 
+/* === Right Side: Icons === */
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.nav-right-link {
+  color: #04395e;
+  font-size: 18px;
+}
+
 .icon-with-badge {
   position: relative;
-  display: inline-block;
 }
 
 .icon-with-badge .badge {
@@ -80,27 +107,141 @@
   border-radius: 50%;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar-main {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  .menu-links,
-  .nav-right {
-    width: 100%;
-    justify-content: space-between;
-    margin: 10px 0;
-  }
-.nav-right-link{
-  color:#306 ;
-  font-size: 14px;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
+/* === Second Row (Menu or Categories) === */
+.second-row {
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
 }
+
+.second-row-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.second-row-list li a {
+  text-decoration: none;
+  color: #04395e;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.second-row-list li a:hover {
+  color: #c40000;
+}
+
+/* === Hamburger (Mobile Only) === */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #04395e;
+  cursor: pointer;
+}
+
+/* === Responsive Design === */
+
+/* === Mobile Drawer Menu === */
+.mobile-drawer {
+  background-color: #ffffff;
+  padding: 20px;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-drawer h4 {
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #04395e;
+}
+
+.mobile-drawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.mobile-drawer li {
+  padding: 8px 0;
+}
+
+.mobile-drawer a {
+  text-decoration: none;
+  color: #04395e;
+  font-weight: 500;
+}
+
+.mobile-drawer a:hover {
+  color: #c40000;
+}
+
+/* === Mobile Only === */
+.mobile-logo-only,
+.mobile-icons-row {
+  display: none;
+}
+
+/* === Desktop Only === */
+.desktop-only {
+  display: flex;
+}
+
+/* === Responsive Switch === */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-logo-only {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 0;
+  }
+
+  .mobile-icons-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    width: 100%;
+  }
+
   .logo-center {
-    margin: 10px auto;
+    flex-direction: row;
+  }
+
+  .second-row {
+    display: none !important;
+  }
+
+  .nav-left {
+    display: none;
+  }
+
+  .nav-right {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0px;
+    gap: 16px;
+  }
+
+
+
+  .hamburger {
+    display: block;
   }
 }

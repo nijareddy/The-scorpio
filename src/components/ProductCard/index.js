@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 import { FiShoppingCart, FiHeart } from 'react-icons/fi';
 import { FaHeart } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({
   image,
@@ -15,7 +16,10 @@ const ProductCard = ({
   handleAddToWishlist,
   handleRemoveFromWishlist,
 }) => {
-  const handleWishlistToggle = () => {
+  const navigate = useNavigate();
+
+  const handleWishlistToggle = (e) => {
+    e.stopPropagation(); // Prevents click from triggering navigation
     if (isWishlisted && typeof handleRemoveFromWishlist === 'function') {
       handleRemoveFromWishlist(title);
     } else if (!isWishlisted && typeof handleAddToWishlist === 'function') {
@@ -23,8 +27,16 @@ const ProductCard = ({
     }
   };
 
+  const handleCardClick = () => {
+    navigate(`/product-details`); // Or use product ID if available
+  };
+
   return (
-    <div className={`product-card ${inStock ? '' : 'out-of-stock'}`}>
+    <div
+      className={`product-card ${inStock ? '' : 'out-of-stock'}`}
+      onClick={handleCardClick}
+      style={{ cursor: 'pointer' }}
+    >
       {isNew && <div className="product-badge">NEW</div>}
 
       <div className="wishlist-icon" onClick={handleWishlistToggle}>
@@ -56,6 +68,7 @@ const ProductCard = ({
         <button
           className="add-to-cart-btn"
           disabled={!inStock}
+          onClick={(e) => e.stopPropagation()} // Prevent navigation on button click
           style={{ cursor: inStock ? 'pointer' : 'not-allowed' }}
         >
           <FiShoppingCart style={{ marginRight: '4px', fontSize: '14px' }} />

@@ -20,12 +20,12 @@ const ProductDetailsItem = () => {
           <div className="thumbnail placeholder">Product view 2</div>
           <img
             className="thumbnail"
-            src="/images/products1.jpg"
+            src="/images/product1.jpg"
             alt="Thumb 3"
           />
           <img
             className="thumbnail"
-            src="/images/products1.jpg"
+            src="/images/product1.jpg"
             alt="Thumb 4"
           />
         </div>

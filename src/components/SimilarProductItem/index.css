@@ -1,4 +1,6 @@
-
+.similar-section{
+   padding: 30px;
+}
 
 
 .similar-products-grid {
@@ -53,3 +55,9 @@
   color: #00529B;
   margin-top: 4px;
 }
+ .similar-section-title{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color:#013a63;
+ }

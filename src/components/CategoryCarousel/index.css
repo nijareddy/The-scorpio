@@ -4,6 +4,7 @@
   max-width: 1000px;
   margin: 80px auto;
   text-align: center;
+  padding: 0 16px; /* For side padding on small screens */
 }
 
 .card-wrapper {
@@ -90,11 +91,11 @@
 }
 
 .nav-arrow.left {
-  left: -50px;
+  left: -30px;
 }
 
 .nav-arrow.right {
-  right: -50px;
+  right: -30px;
 }
 
 /* Dots */
@@ -115,4 +116,64 @@
 
 .dot.active {
   background-color: #000;
+}
+/* For tablets */
+@media (max-width: 768px) {
+  .carousel-card {
+    width: 200px;
+    height: 300px;
+  }
+
+  .carousel-card.left {
+    transform: translateX(-220px) scale(0.9);
+  }
+
+  .carousel-card.right {
+    transform: translateX(220px) scale(0.9);
+  }
+
+  .nav-arrow.left {
+    left: -20px;
+  }
+
+  .nav-arrow.right {
+    right: -20px;
+  }
+
+  .card-content h3 {
+    font-size: 14px;
+  }
+
+  .card-content p {
+    font-size: 12px;
+  }
+}
+
+/* For mobile */
+@media (max-width: 480px) {
+  .carousel-card {
+    width: 160px;
+    height: 260px;
+  }
+
+  .carousel-card.left {
+    transform: translateX(-180px) scale(0.85);
+  }
+
+  .carousel-card.right {
+    transform: translateX(180px) scale(0.85);
+  }
+
+  .nav-arrow.left,
+  .nav-arrow.right {
+    display: none; /* hide arrows for touch-based slide, if needed */
+  }
+
+  .card-content h3 {
+    font-size: 13px;
+  }
+
+  .card-content p {
+    font-size: 11px;
+  }
 }

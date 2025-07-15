@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import WishlistPage from './pages/WishlistPage';
 import CartPage from './pages/CartPage';
 import ProductDetailsPage from './pages/ProductDetailsPage'
-
+import AllProductsPage from './pages/AllProductsPage'
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
          <Route exact path="/wish-list" element={<WishlistPage/>}/>
          <Route exact path ="/cart" element={<CartPage/>}/>
          <Route exact path ="/product-details" element={<ProductDetailsPage/>}/>
+         <Route exact path ="/products" element={<AllProductsPage/>}/>
       </Routes>
     </Router>
   );
