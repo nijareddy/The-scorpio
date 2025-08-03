@@ -4,9 +4,18 @@ import ProductSection from '../../components/ProductSection';
 import NavBar from '../../components/NavBar';
 import './index.css';
 
-const categoryFilters = ['Suits', 'Blazers', 'Trousers', 'Accessories', 'Uniforms', 'T-Shirts'];
-const ratingFilters = [4, 3, 2, 1];
-
+const categoryFilters = [
+  'Suits',
+  'Blazers',
+  'Trousers',
+  'Accessories',
+  'Uniforms',
+  'T-Shirts',
+  'Shirts',
+  'Watches',
+  'Formal Pants',
+  'Shoes',
+];
 
 const allProducts = [
   // Suits
@@ -21,7 +30,6 @@ const allProducts = [
     isNew: true,
     inStock: true,
     isWishlisted: false,
-    rating:4.2,
   },
   {
     image: '/images/product2.jpg',
@@ -34,7 +42,6 @@ const allProducts = [
     isNew: false,
     inStock: true,
     isWishlisted: false,
-    rating:4.2,
   },
 
   // Blazers
@@ -49,7 +56,6 @@ const allProducts = [
     isNew: false,
     inStock: true,
     isWishlisted: false,
-    rating:4.2,
   },
 
   // Trousers
@@ -64,7 +70,6 @@ const allProducts = [
     isNew: false,
     inStock: true,
     isWishlisted: false,
-    rating:4.2,
   },
 
   // Accessories
@@ -79,7 +84,6 @@ const allProducts = [
     isNew: true,
     inStock: true,
     isWishlisted: false,
-    rating:4.2,
   },
 
   // Uniforms
@@ -94,7 +98,6 @@ const allProducts = [
     isNew: false,
     inStock: true,
     isWishlisted: false,
-    rating:4.2,
   },
 
   // T-Shirts
@@ -109,10 +112,64 @@ const allProducts = [
     isNew: true,
     inStock: true,
     isWishlisted: false,
-    rating:4.2,
+  },
+
+  // Shirts
+  {
+    image: '/images/shirt1.jpg',
+    title: 'Classic White Shirt',
+    category: 'Shirts',
+    type: '1-piece',
+    price: '₹999',
+    originalPrice: '₹1,499',
+    offer: '33% OFF',
+    isNew: true,
+    inStock: true,
+    isWishlisted: false,
+  },
+
+  // Watches
+  {
+    image: '/images/watch1.jpg',
+    title: 'Silver Dial Watch',
+    category: 'Watches',
+    type: '1-piece',
+    price: '₹2,199',
+    originalPrice: '₹3,299',
+    offer: '33% OFF',
+    isNew: true,
+    inStock: true,
+    isWishlisted: false,
+  },
+
+  // Formal Pants
+  {
+    image: '/images/pants1.jpg',
+    title: 'Formal Pants - Gray',
+    category: 'Formal Pants',
+    type: '1-piece',
+    price: '₹1,299',
+    originalPrice: '₹1,799',
+    offer: '27% OFF',
+    isNew: false,
+    inStock: true,
+    isWishlisted: false,
+  },
+
+  // Shoes
+  {
+    image: '/images/shoes1.jpg',
+    title: 'Black Leather Shoes',
+    category: 'Shoes',
+    type: '1-pair',
+    price: '₹2,999',
+    originalPrice: '₹4,499',
+    offer: '33% OFF',
+    isNew: true,
+    inStock: true,
+    isWishlisted: false,
   },
 ];
-
 
 const AllProductsPage = () => {
   const location = useLocation();
@@ -120,7 +177,6 @@ const AllProductsPage = () => {
   const preselectedCategory = queryParams.get('category');
 
   const [selectedCategories, setSelectedCategories] = useState(preselectedCategory ? [preselectedCategory] : []);
-  const [selectedRating, setSelectedRating] = useState(null);
   const [sortOrder, setSortOrder] = useState('high-to-low');
 
   useEffect(() => {
@@ -137,13 +193,8 @@ const AllProductsPage = () => {
     );
   };
 
-  const handleRatingSelect = (rating) => {
-    setSelectedRating((prev) => (prev === rating ? null : rating));
-  };
-
   const handleClearFilters = () => {
     setSelectedCategories([]);
-    setSelectedRating(null);
   };
 
   const handleSortChange = (e) => {
@@ -152,14 +203,17 @@ const AllProductsPage = () => {
 
   let filteredProducts = allProducts.filter((product) => {
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-    const matchesRating = selectedRating == null || product.rating >= selectedRating;
-    return matchesCategory && matchesRating && product.inStock;
+    return matchesCategory && product.inStock;
   });
 
   if (sortOrder === 'low-to-high') {
-    filteredProducts.sort((a, b) => parseInt(a.price.slice(1).replace(',', '')) - parseInt(b.price.slice(1).replace(',', '')));
+    filteredProducts.sort(
+      (a, b) => parseInt(a.price.slice(1).replace(',', '')) - parseInt(b.price.slice(1).replace(',', ''))
+    );
   } else {
-    filteredProducts.sort((a, b) => parseInt(b.price.slice(1).replace(',', '')) - parseInt(a.price.slice(1).replace(',', '')));
+    filteredProducts.sort(
+      (a, b) => parseInt(b.price.slice(1).replace(',', '')) - parseInt(a.price.slice(1).replace(',', ''))
+    );
   }
 
   const groupedByCategory = categoryFilters.map((category) => ({
@@ -183,14 +237,6 @@ const AllProductsPage = () => {
               {cat}
             </label>
           ))}
-
-          <h3>Rating</h3>
-          {ratingFilters.map((rating) => (
-            <div key={rating} onClick={() => handleRatingSelect(rating)} style={{ cursor: 'pointer' }}>
-              {'★'.repeat(rating)}{'☆'.repeat(5 - rating)} & up
-            </div>
-          ))}
-
           <button onClick={handleClearFilters}>Clear Filters</button>
         </aside>
 
@@ -208,11 +254,7 @@ const AllProductsPage = () => {
 
           {groupedByCategory.map(({ category, products }) =>
             products.length > 0 ? (
-              <ProductSection
-                key={category}
-                titleComponent={category}
-                products={products}
-              />
+              <ProductSection key={category} titleComponent={category} products={products} />
             ) : null
           )}
         </div>
@@ -222,5 +264,3 @@ const AllProductsPage = () => {
 };
 
 export default AllProductsPage;
-
-

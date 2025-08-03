@@ -1,0 +1,194 @@
+.options-section {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 400px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.options-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: left;
+  color: rgb(0, 51, 102);
+  
+}
+
+.options-section label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.color-button {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+  border-color: #2563eb;
+}
+
+.options-section select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.size-guide {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.size-guide:hover {
+  text-decoration: underline;
+}
+
+.quantity-section {
+  margin-top: 20px;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.quantity-box button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.quantity-box input {
+  width: 50px;
+  text-align: center;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.price-summary {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.price-summary p {
+  margin: 4px 0;
+}
+
+.total-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.delivery-note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.save-button,
+.cart-button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-button {
+  background-color: #e5e7eb; /* gray-200 */
+  color: #111827;
+}
+
+.save-button:hover {
+  background-color: #d1d5db;
+}
+
+.cart-button {
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+}
+
+.cart-button:hover {
+  background-color: #1e40af; /* darker blue */
+}
+/* T-shirt type buttons section */
+.type-options {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.type-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 10px;
+  width: 90px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+.type-button img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.type-button span {
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+}
+
+.type-button.active {
+  border-color: #2563eb;
+  background-color: #e0edff;
+}

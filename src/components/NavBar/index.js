@@ -99,9 +99,9 @@ const NavBar = () => {
       {activeTab === 'menu' && (
         <div className="second-row">
           <ul className="second-row-list">
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/products">All Products</Link></li>
-            <li><Link to="/">New Arrivals</Link></li>
-            <li><Link to="/">Trending</Link></li>
+            <li><Link to="/customise">Customize T-shirt</Link></li>
             <li><Link to="/">Sale</Link></li>
           </ul>
         </div>
@@ -112,21 +112,26 @@ const NavBar = () => {
             <li><Link to={{ pathname: "/products", search: "?category=Suits" }}>Suits</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Blazers" }}>Blazers</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Trousers" }}>Trousers</Link></li>
+            <li><Link to={{ pathname: "/products", search: "?category=Shirts" }}>Shirts</Link></li>
+            <li><Link to={{ pathname: "/products", search: "?category=Formal Pants" }}>Formal Pants</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Accessories" }}>Accessories</Link></li>
+            <li><Link to={{ pathname: "/products", search: "?category=Watches" }}>Watches</Link></li>
+            <li><Link to={{ pathname: "/products", search: "?category=Shoes" }}>Shoes</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=T-Shirts" }}>T-Shirts</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Uniforms" }}>Uniforms</Link></li>
           </ul>
         </div>
       )}
 
+
       {/* === Mobile Drawer === */}
       {isMobileMenuOpen && (
         <div className="mobile-drawer">
           <h4>Menu</h4>
           <ul>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/products">All Products</Link></li>
-            <li><Link to="/">New Arrivals</Link></li>
-            <li><Link to="/">Trending</Link></li>
+            <li><Link to="/">Customize T-shirt</Link></li>
             <li><Link to="/">Sale</Link></li>
           </ul>
           <h4>Categories</h4>
@@ -134,10 +139,15 @@ const NavBar = () => {
             <li><Link to={{ pathname: "/products", search: "?category=Suits" }}>Suits</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Blazers" }}>Blazers</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Trousers" }}>Trousers</Link></li>
+            <li><Link to={{ pathname: "/products", search: "?category=Shirts" }}>Shirts</Link></li>
+            <li><Link to={{ pathname: "/products", search: "?category=Formal Pants" }}>Formal Pants</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Accessories" }}>Accessories</Link></li>
+            <li><Link to={{ pathname: "/products", search: "?category=Watches" }}>Watches</Link></li>
+            <li><Link to={{ pathname: "/products", search: "?category=Shoes" }}>Shoes</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=T-Shirts" }}>T-Shirts</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Uniforms" }}>Uniforms</Link></li>
           </ul>
+
         </div>
       )}
     </header>

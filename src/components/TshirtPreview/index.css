@@ -1,0 +1,109 @@
+.preview-section {
+  flex: 1;
+  min-width: 320px;
+  
+}
+
+.view-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.view-toggle button {
+  padding: 8px 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.view-toggle .active {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+/* --- T-shirt Preview Area --- */
+.tshirt-preview {
+  position: relative;
+  background-color: #e9d5ff;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1; /* keeps square shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* hide overflow */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* center horizontally */
+}
+
+/* Ensures any image fits nicely inside preview */
+.tshirt-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* --- Upload Section --- */
+.upload-section {
+  margin-top: 20px;
+}
+
+.upload-box {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #007bff;
+}
+
+.upload-icon {
+  font-size: 28px;
+}
+
+.upload-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.upload-hint {
+  font-size: 13px;
+  color: #666;
+  margin: 4px 0 12px;
+}
+
+.browse-button {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.browse-button:hover {
+  background-color: #0056b3;
+}
+
+.file-format {
+  font-size: 12px;
+  color: #666;
+}
