@@ -46,7 +46,7 @@ const allProducts = [
 
   // Blazers
   {
-    image: '/images/product2.jpg',
+    image: '/images/blazer.png',
     title: 'Slim Fit Blazer - Navy',
     category: 'Blazers',
     type: '1-piece',
@@ -74,7 +74,7 @@ const allProducts = [
 
   // Accessories
   {
-    image: '/images/watch.jpg',
+    image: '/images/belt.png',
     title: 'Leather Belt - Brown',
     category: 'Accessories',
     type: '1-piece',
@@ -102,7 +102,7 @@ const allProducts = [
 
   // T-Shirts
   {
-    image: '/images/product2.jpg',
+    image: '/images/round.png',
     title: 'Graphic Tee - Blue',
     category: 'T-Shirts',
     type: '1-piece',
@@ -116,7 +116,7 @@ const allProducts = [
 
   // Shirts
   {
-    image: '/images/shirt1.jpg',
+    image: '/images/shirt.png',
     title: 'Classic White Shirt',
     category: 'Shirts',
     type: '1-piece',
@@ -130,7 +130,7 @@ const allProducts = [
 
   // Watches
   {
-    image: '/images/watch1.jpg',
+    image: '/images/watch.jpg',
     title: 'Silver Dial Watch',
     category: 'Watches',
     type: '1-piece',
@@ -144,7 +144,7 @@ const allProducts = [
 
   // Formal Pants
   {
-    image: '/images/pants1.jpg',
+    image: '/images/formal pants.png',
     title: 'Formal Pants - Gray',
     category: 'Formal Pants',
     type: '1-piece',
@@ -158,7 +158,7 @@ const allProducts = [
 
   // Shoes
   {
-    image: '/images/shoes1.jpg',
+    image: '/images/shoes.png',
     title: 'Black Leather Shoes',
     category: 'Shoes',
     type: '1-pair',

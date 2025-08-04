@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import SCORPIO_LOGO from '../../constants/logo';
 import { FaRegHeart, FaBars, FaTimes } from 'react-icons/fa';
 import { FiShoppingCart, FiUser } from 'react-icons/fi';
@@ -9,10 +9,22 @@ import { CiSearch } from "react-icons/ci";
 const NavBar = () => {
   const [activeTab, setActiveTab] = useState('categories');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+
+  const location = useLocation();
 
   const toggleTab = (tab) => {
     setActiveTab((prev) => (prev === tab ? 'categories' : tab));
   };
+
+  const toggleProfileMenu = () => {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
+  };
+
+  // Optional: close profile dropdown on route change
+  useEffect(() => {
+    setIsProfileMenuOpen(false);
+  }, [location]);
 
   return (
     <header>
@@ -41,7 +53,18 @@ const NavBar = () => {
           <Link to="/cart" className="icon-with-badge">
             <FiShoppingCart className='nav-right-link' /><span className="badge">2</span>
           </Link>
-          <Link to="#"><FiUser className='nav-right-link' /></Link>
+          <div className="profile-dropdown-container">
+            <FiUser className='nav-right-link profile-icon' onClick={toggleProfileMenu} />
+            {isProfileMenuOpen && (
+              <div className="profile-dropdown">
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
+                <Link to="/profile">My Profile</Link>
+                <Link to="/orders">My Orders</Link>
+                <Link to="/logout">Logout</Link>
+              </div>
+            )}
+          </div>
           <button className="hamburger" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -53,22 +76,14 @@ const NavBar = () => {
         <div className="nav-left">
           <ul className="menu-links">
             <li>
-              <Link
-                to="#"
-                onClick={() => toggleTab('menu')}
-                className={activeTab === 'menu' ? 'active-tab' : ''}
-              >
+              <Link to="#" onClick={() => toggleTab('menu')} className={activeTab === 'menu' ? 'active-tab' : ''}>
                 Menu
               </Link>
             </li>
           </ul>
           <ul className="menu-links">
             <li>
-              <Link
-                to="#"
-                onClick={() => toggleTab('categories')}
-                className={activeTab === 'categories' ? 'active-tab' : ''}
-              >
+              <Link to="#" onClick={() => toggleTab('categories')} className={activeTab === 'categories' ? 'active-tab' : ''}>
                 Categories
               </Link>
             </li>
@@ -88,10 +103,18 @@ const NavBar = () => {
           <Link to="/cart" className="icon-with-badge">
             <FiShoppingCart className='nav-right-link' /><span className="badge">2</span>
           </Link>
-          <Link to="#"><FiUser className='nav-right-link' /></Link>
-          <button className="hamburger">
-            {false ? <FaTimes /> : <FaBars />}
-          </button>
+          <div className="profile-dropdown-container">
+            <FiUser className='nav-right-link profile-icon' onClick={toggleProfileMenu} />
+            {isProfileMenuOpen && (
+              <div className="profile-dropdown">
+                <Link to="/login">Login</Link>
+                <Link to="/login">Register</Link>
+                <Link to="/profile">My Profile</Link>
+                <Link to="/orders">My Orders</Link>
+                <Link to="/login">Logout</Link>
+              </div>
+            )}
+          </div>
         </div>
       </nav>
 
@@ -123,7 +146,6 @@ const NavBar = () => {
         </div>
       )}
 
-
       {/* === Mobile Drawer === */}
       {isMobileMenuOpen && (
         <div className="mobile-drawer">
@@ -147,7 +169,6 @@ const NavBar = () => {
             <li><Link to={{ pathname: "/products", search: "?category=T-Shirts" }}>T-Shirts</Link></li>
             <li><Link to={{ pathname: "/products", search: "?category=Uniforms" }}>Uniforms</Link></li>
           </ul>
-
         </div>
       )}
     </header>
